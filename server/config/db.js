@@ -9,8 +9,9 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME || 'school_exam_db',
 
   ssl: {
-    rejectUnauthorized: false
-  },
+  rejectUnauthorized: false,
+  minVersion: 'TLSv1.2'
+},
 
   waitForConnections: true,
   connectionLimit: 10,
